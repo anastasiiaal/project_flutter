@@ -44,7 +44,9 @@ class MyFirstUI extends StatelessWidget {
 
     Size size = MediaQuery.of(context).size;
     double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height - 80;
+    double appBarHeight = AppBar().preferredSize.height;
+    double height = MediaQuery.of(context).size.height - appBarHeight;
+
 
     return Scaffold(
       appBar: AppBar(
@@ -55,22 +57,22 @@ class MyFirstUI extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Row(
-              children: [
-                Expanded(
-                  child: Container(
-                      height: height / 4,
-                      color: Colors.blueAccent
+           Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                        height: height / 4,
+                        color: Colors.blueAccent
+                    ),
                   ),
-                ),
-                Expanded(
-                  child: Container(
-                      height: height / 4,
-                      color: Colors.redAccent
+                  Expanded(
+                    child: Container(
+                        height: height / 4,
+                        color: Colors.redAccent
+                    ),
                   ),
-                ),
-              ]
-          ),
+                ]
+            ),
           Row(
               children: [
                 Expanded(
@@ -119,16 +121,17 @@ class MyFirstUI extends StatelessWidget {
                 ),
               ]
           ),
-          Row(
-              children: [
-                Expanded(
-                  child: Container(
-                      height: height / 4,
-                      color: Colors.brown
-                  ),
-                )
-              ]
-          ),
+          Expanded(
+            child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                        color: Colors.brown
+                    ),
+                  )
+                ]
+            ),
+          )
         ],
       )
     );
