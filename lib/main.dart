@@ -59,22 +59,44 @@ class MyFirstUI extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Row(children: [
-              SizedBox(
-                width: width,
-                height: height / 4,
-                child: Image.asset(
-                  'images/mountains.png',
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ]),
-            Row(children: [
-              CircleAvatar(
-                backgroundColor: Colors.brown.shade500,
-                backgroundImage: const AssetImage('images/girl.jpg'),
-              )
-            ],)
+            Stack(
+              children: [
+                Row(children: [
+                  SizedBox(
+                    width: width,
+                    height: height / 4,
+                    child: Image.asset(
+                      'images/mountains.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ]),
+                Positioned(
+                  bottom: -60,
+                  width: width,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          const CircleAvatar(
+                            backgroundColor: Colors.black12,
+                            radius: 64,
+                          ),
+                          CircleAvatar(
+                            backgroundColor: Colors.brown.shade500,
+                            foregroundImage:
+                                const AssetImage('images/girl.jpg'),
+                            radius: 60,
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            )
           ],
         ));
   }
