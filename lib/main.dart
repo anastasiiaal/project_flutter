@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
       home: const MyFirstUI(),
@@ -44,32 +44,93 @@ class MyFirstUI extends StatelessWidget {
 
     Size size = MediaQuery.of(context).size;
     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height - 80;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text("Basic UI"),
         elevation: 2,
-        shadowColor: Colors.blue[100],
+        shadowColor: Colors.blueGrey[300],
         centerTitle: true,
       ),
-      body: Row(
+      body: Column(
         children: [
-          Container(
-            height: 50.0,
-            width: 100.0,
-            color: Colors.yellow[600],
-            child: const Text("hello", textAlign: TextAlign.center),
+          Row(
+              children: [
+                Expanded(
+                  child: Container(
+                      height: height / 4,
+                      color: Colors.blueAccent
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                      height: height / 4,
+                      color: Colors.redAccent
+                  ),
+                ),
+              ]
           ),
-          Container(
-            height: 50.0,
-            width: 100.0,
-            color: Colors.deepPurple[200],
-            child: const Text("there", textAlign: TextAlign.center),
+          Row(
+              children: [
+                Expanded(
+                  child: Container(
+                      height: height / 4,
+                      color: Colors.lightGreen
+                  ),
+                )
+              ]
           ),
-        ]
-      ),
-
-
+          Row(
+              children: [
+                Expanded(
+                  child: Container(
+                      height: height / 4,
+                      color: Colors.cyan[200]
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                      height: height / 4,
+                      color: Colors.black
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    children: [
+                      Container(
+                          height: height / 4 / 4,
+                          color: Colors.yellow[600]
+                      ),
+                      Container(
+                          height: height / 4 / 4,
+                          color: Colors.pinkAccent
+                      ),
+                      Container(
+                          height: height / 4 / 4,
+                          color: Colors.purple
+                      ),
+                      Container(
+                          height: height / 4 / 4,
+                          color: Colors.deepOrangeAccent
+                      ),
+                    ],
+                  )
+                ),
+              ]
+          ),
+          Row(
+              children: [
+                Expanded(
+                  child: Container(
+                      height: height / 4,
+                      color: Colors.brown
+                  ),
+                )
+              ]
+          ),
+        ],
+      )
     );
   }
 }
