@@ -41,99 +41,41 @@ class MyFirstUI extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     Size size = MediaQuery.of(context).size;
     double width = MediaQuery.of(context).size.width;
     double appBarHeight = AppBar().preferredSize.height;
     double height = MediaQuery.of(context).size.height - appBarHeight;
 
-
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Basic UI"),
-        elevation: 2,
-        shadowColor: Colors.blueGrey[300],
-        centerTitle: true,
-      ),
-      body: Column(
-        children: [
-           Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                        height: height / 4,
-                        color: Colors.blueAccent
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                        height: height / 4,
-                        color: Colors.redAccent
-                    ),
-                  ),
-                ]
-            ),
-          Row(
-              children: [
-                Expanded(
-                  child: Container(
-                      height: height / 4,
-                      color: Colors.lightGreen
-                  ),
-                )
-              ]
+        appBar: AppBar(
+          title: const Text(
+            "Profile",
+            style: TextStyle(fontWeight: FontWeight.w600, color: Colors.white),
           ),
-          Row(
-              children: [
-                Expanded(
-                  child: Container(
-                      height: height / 4,
-                      color: Colors.cyan[200]
-                  ),
+          elevation: 2,
+          shadowColor: Colors.blueGrey[300],
+          centerTitle: true,
+          backgroundColor: Colors.blue[600],
+        ),
+        body: Column(
+          children: [
+            Row(children: [
+              SizedBox(
+                width: width,
+                height: height / 4,
+                child: Image.asset(
+                  'images/mountains.png',
+                  fit: BoxFit.cover,
                 ),
-                Expanded(
-                  child: Container(
-                      height: height / 4,
-                      color: Colors.black
-                  ),
-                ),
-                Expanded(
-                  child: Column(
-                    children: [
-                      Container(
-                          height: height / 4 / 4,
-                          color: Colors.yellow[600]
-                      ),
-                      Container(
-                          height: height / 4 / 4,
-                          color: Colors.pinkAccent
-                      ),
-                      Container(
-                          height: height / 4 / 4,
-                          color: Colors.purple
-                      ),
-                      Container(
-                          height: height / 4 / 4,
-                          color: Colors.deepOrangeAccent
-                      ),
-                    ],
-                  )
-                ),
-              ]
-          ),
-          Expanded(
-            child: Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                        color: Colors.brown
-                    ),
-                  )
-                ]
-            ),
-          )
-        ],
-      )
-    );
+              ),
+            ]),
+            Row(children: [
+              CircleAvatar(
+                backgroundColor: Colors.brown.shade500,
+                backgroundImage: const AssetImage('images/girl.jpg'),
+              )
+            ],)
+          ],
+        ));
   }
 }
