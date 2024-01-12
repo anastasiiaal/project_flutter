@@ -71,42 +71,37 @@ class MyFirstUI extends StatelessWidget {
                     ),
                   ),
                 ]),
-                Positioned(
-                  bottom: -60,
-                  width: width,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          const CircleAvatar(
-                            backgroundColor: Colors.white,
-                            radius: 64,
-                          ),
-                          CircleAvatar(
-                            backgroundColor: Colors.brown.shade500,
-                            foregroundImage:
-                                const AssetImage('images/girl.jpg'),
-                            radius: 60,
-                          )
-                        ],
-                      ),
-                    ],
+                Row(children: [
+                  Container(
+                    width: width,
+                    margin: EdgeInsets.fromLTRB(0, 140, 0, 0),
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        const CircleAvatar(
+                          backgroundColor: Colors.white,
+                          radius: 64,
+                        ),
+                        CircleAvatar(
+                          backgroundColor: Colors.brown.shade500,
+                          foregroundImage: const AssetImage('images/girl.jpg'),
+                          radius: 60,
+                        )
+                      ],
+                    ),
                   ),
-                )
+                ])
               ],
             ),
             const Text(
               'Jeanna Doe',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontWeight: FontWeight.bold, fontSize: 30),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
             ),
             SizedBox(
                 width: width / 1.15,
                 child: const Padding(
-                  padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
+                  padding: EdgeInsets.only(top: 8.0, bottom: 20.0),
                   child: Text(
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet.',
                     textAlign: TextAlign.center,
@@ -141,7 +136,6 @@ class MyFirstUI extends StatelessWidget {
                   ),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(15.0),
-                    // Ajoutez le rayon ici
                     child: Container(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 40, vertical: 7),
