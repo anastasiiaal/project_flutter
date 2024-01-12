@@ -13,21 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
@@ -43,6 +28,7 @@ class MyFirstUI extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     double width = MediaQuery.of(context).size.width;
+    double containerWidth = width / 1.1;
     double appBarHeight = AppBar().preferredSize.height;
     double height = MediaQuery.of(context).size.height - appBarHeight;
 
@@ -74,19 +60,19 @@ class MyFirstUI extends StatelessWidget {
                 Row(children: [
                   Container(
                     width: width,
-                    margin: EdgeInsets.fromLTRB(0, 140, 0, 0),
+                    margin: const EdgeInsets.fromLTRB(0, 150, 0, 0),
                     child: Stack(
                       alignment: Alignment.center,
                       children: [
                         const CircleAvatar(
                           backgroundColor: Colors.white,
-                          radius: 64,
+                          radius: 54,
                         ),
                         CircleAvatar(
-                          backgroundColor: Colors.brown.shade500,
-                          foregroundImage: const AssetImage('images/girl.jpg'),
-                          radius: 60,
-                        )
+                            backgroundColor: Colors.brown.shade500,
+                            foregroundImage:
+                                const AssetImage('images/girl.jpg'),
+                            radius: 50)
                       ],
                     ),
                   ),
@@ -99,7 +85,7 @@ class MyFirstUI extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
             ),
             SizedBox(
-                width: width / 1.15,
+                width: containerWidth,
                 child: const Padding(
                   padding: EdgeInsets.only(top: 8.0, bottom: 20.0),
                   child: Text(
@@ -118,7 +104,7 @@ class MyFirstUI extends StatelessWidget {
                         border: Border.all(width: 1.5, color: Colors.blue),
                         borderRadius: BorderRadius.circular(10.0)),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(15.0),
+                      borderRadius: BorderRadius.circular(10.0),
                       child: Container(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 40, vertical: 15),
@@ -135,7 +121,7 @@ class MyFirstUI extends StatelessWidget {
                     ),
                   ),
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(15.0),
+                    borderRadius: BorderRadius.circular(10.0),
                     child: Container(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 40, vertical: 7),
@@ -154,7 +140,86 @@ class MyFirstUI extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+              child: Divider(
+                color: Colors.grey[300],
+                thickness: 1,
+                height: 1,
+              ),
+            ),
+            SizedBox(
+              width: containerWidth,
+              child: const Row(children: [
+                Text(
+                  'À propos de moi...',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                ),
+              ]),
+            ),
+            SizedBox(
+              width: containerWidth,
+              child: const Row(children: [
+                Icon(
+                  Icons.home,
+                  color: Colors.black87,
+                  size: 22,
+                  semanticLabel: 'Text to announce in accessibility modes'
+                ),
+                Text(
+                  '  Annecy-le-Vieux, France',
+                  style: TextStyle(fontSize: 16, height: 1.5),
+                ),
+              ]),
+            ),
+            SizedBox(
+              width: containerWidth,
+              child: const Row(children: [
+                Icon(
+                    Icons.work,
+                    color: Colors.black87,
+                    size: 22,
+                    semanticLabel: 'Text to announce in accessibility modes'
+                ),
+                Text(
+                  '  Développeur Polyvalent, Formateur',
+                  style: TextStyle(fontSize: 16, height: 1.5),
+                ),
+              ]),
+            ),
+            SizedBox(
+              width: containerWidth,
+              child: const Row(children: [
+                Icon(
+                    Icons.favorite,
+                    color: Colors.black87,
+                    size: 22,
+                    semanticLabel: 'Text to announce in accessibility modes'
+                ),
+                Text(
+                  '  En couple',
+                  style: TextStyle(fontSize: 16, height: 1.5),
+                ),
+              ]),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+              child: Divider(
+                color: Colors.grey[300],
+                thickness: 1,
+                height: 1,
+              ),
+            ),
+            SizedBox(
+              width: containerWidth,
+              child: const Row(children: [
+                Text(
+                  'Amis',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                ),
+              ]),
+            ),
           ],
         ));
   }
