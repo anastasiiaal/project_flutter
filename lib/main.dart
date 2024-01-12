@@ -43,184 +43,186 @@ class MyFirstUI extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.blue[600],
         ),
-        body: Column(
-          children: [
-            Stack(
-              children: [
-                Row(children: [
-                  SizedBox(
-                    width: width,
-                    height: height / 4,
-                    child: Image.asset(
-                      'images/mountains.png',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ]),
-                Row(children: [
-                  Container(
-                    width: width,
-                    margin: const EdgeInsets.fromLTRB(0, 150, 0, 0),
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        const CircleAvatar(
-                          backgroundColor: Colors.white,
-                          radius: 54,
-                        ),
-                        CircleAvatar(
-                            backgroundColor: Colors.brown.shade500,
-                            foregroundImage:
-                                const AssetImage('images/girl.jpg'),
-                            radius: 50)
-                      ],
-                    ),
-                  ),
-                ])
-              ],
-            ),
-            const Text(
-              'Jeanna Doe',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-            ),
-            SizedBox(
-                width: containerWidth,
-                child: const Padding(
-                  padding: EdgeInsets.only(top: 8.0, bottom: 20.0),
-                  child: Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 16, color: Colors.grey),
-                  ),
-                )),
-            SizedBox(
-              width: width / 1.3,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Stack(
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        border: Border.all(width: 1.5, color: Colors.blue),
-                        borderRadius: BorderRadius.circular(10.0)),
-                    child: ClipRRect(
+                  Row(children: [
+                    SizedBox(
+                      width: width,
+                      height: height / 4,
+                      child: Image.asset(
+                        'images/mountains.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ]),
+                  Row(children: [
+                    Container(
+                      width: width,
+                      margin: const EdgeInsets.fromLTRB(0, 150, 0, 0),
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          const CircleAvatar(
+                            backgroundColor: Colors.white,
+                            radius: 54,
+                          ),
+                          CircleAvatar(
+                              backgroundColor: Colors.brown.shade500,
+                              foregroundImage:
+                                  const AssetImage('images/girl.jpg'),
+                              radius: 50)
+                        ],
+                      ),
+                    ),
+                  ])
+                ],
+              ),
+              const Text(
+                'Jeanna Doe',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+              ),
+              SizedBox(
+                  width: containerWidth,
+                  child: const Padding(
+                    padding: EdgeInsets.only(top: 8.0, bottom: 20.0),
+                    child: Text(
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 16, color: Colors.grey, fontStyle: FontStyle.italic),
+                    ),
+                  )),
+              SizedBox(
+                width: width / 1.3,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(width: 1.5, color: Colors.blue),
+                          borderRadius: BorderRadius.circular(10.0)),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.0),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 40, vertical: 15),
+                          decoration: const BoxDecoration(
+                            color: Colors.white,
+                          ),
+                          child: const Text(
+                            'Modifier le profil',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.blue, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                    ),
+                    ClipRRect(
                       borderRadius: BorderRadius.circular(10.0),
                       child: Container(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 40, vertical: 15),
+                            horizontal: 40, vertical: 7),
                         decoration: const BoxDecoration(
-                          color: Colors.white,
+                          color: Colors.blue,
                         ),
                         child: const Text(
-                          'Modifier le profil',
+                          '+',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              color: Colors.blue, fontWeight: FontWeight.bold),
+                              color: Colors.white,
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),
-                  ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(10.0),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 40, vertical: 7),
-                      decoration: const BoxDecoration(
-                        color: Colors.blue,
-                      ),
-                      child: const Text(
-                        '+',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 28,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
-              child: Divider(
-                color: Colors.grey[300],
-                thickness: 1,
-                height: 1,
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+                child: Divider(
+                  color: Colors.grey[300],
+                  thickness: 1,
+                  height: 1,
+                ),
               ),
-            ),
-            SizedBox(
-              width: containerWidth,
-              child: const Row(children: [
-                Text(
-                  'À propos de moi...',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                ),
-              ]),
-            ),
-            SizedBox(
-              width: containerWidth,
-              child: const Row(children: [
-                Icon(
-                  Icons.home,
-                  color: Colors.black87,
-                  size: 22,
-                  semanticLabel: 'Text to announce in accessibility modes'
-                ),
-                Text(
-                  '  Annecy-le-Vieux, France',
-                  style: TextStyle(fontSize: 16, height: 1.5),
-                ),
-              ]),
-            ),
-            SizedBox(
-              width: containerWidth,
-              child: const Row(children: [
-                Icon(
-                    Icons.work,
+              SizedBox(
+                width: containerWidth,
+                child: const Row(children: [
+                  Text(
+                    'À propos de moi...',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
+                ]),
+              ),
+              SizedBox(
+                width: containerWidth,
+                child: const Row(children: [
+                  Icon(
+                    Icons.home,
                     color: Colors.black87,
                     size: 22,
                     semanticLabel: 'Text to announce in accessibility modes'
-                ),
-                Text(
-                  '  Développeur Polyvalent, Formateur',
-                  style: TextStyle(fontSize: 16, height: 1.5),
-                ),
-              ]),
-            ),
-            SizedBox(
-              width: containerWidth,
-              child: const Row(children: [
-                Icon(
-                    Icons.favorite,
-                    color: Colors.black87,
-                    size: 22,
-                    semanticLabel: 'Text to announce in accessibility modes'
-                ),
-                Text(
-                  '  En couple',
-                  style: TextStyle(fontSize: 16, height: 1.5),
-                ),
-              ]),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
-              child: Divider(
-                color: Colors.grey[300],
-                thickness: 1,
-                height: 1,
+                  ),
+                  Text(
+                    '  Annecy-le-Vieux, France',
+                    style: TextStyle(fontSize: 16, height: 1.5),
+                  ),
+                ]),
               ),
-            ),
-            SizedBox(
-              width: containerWidth,
-              child: const Row(children: [
-                Text(
-                  'Amis',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              SizedBox(
+                width: containerWidth,
+                child: const Row(children: [
+                  Icon(
+                      Icons.work,
+                      color: Colors.black87,
+                      size: 22,
+                      semanticLabel: 'Text to announce in accessibility modes'
+                  ),
+                  Text(
+                    '  Développeur Polyvalent, Formateur',
+                    style: TextStyle(fontSize: 16, height: 1.5),
+                  ),
+                ]),
+              ),
+              SizedBox(
+                width: containerWidth,
+                child: const Row(children: [
+                  Icon(
+                      Icons.favorite,
+                      color: Colors.black87,
+                      size: 22,
+                      semanticLabel: 'Text to announce in accessibility modes'
+                  ),
+                  Text(
+                    '  En couple',
+                    style: TextStyle(fontSize: 16, height: 1.5),
+                  ),
+                ]),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+                child: Divider(
+                  color: Colors.grey[300],
+                  thickness: 1,
+                  height: 1,
                 ),
-              ]),
-            ),
-          ],
+              ),
+              SizedBox(
+                width: containerWidth,
+                child: const Row(children: [
+                  Text(
+                    'Amis',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
+                ]),
+              ),
+            ],
+          ),
         ));
   }
 }
