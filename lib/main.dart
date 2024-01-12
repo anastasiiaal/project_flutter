@@ -81,7 +81,7 @@ class MyFirstUI extends StatelessWidget {
                         alignment: Alignment.center,
                         children: [
                           const CircleAvatar(
-                            backgroundColor: Colors.black12,
+                            backgroundColor: Colors.white,
                             radius: 64,
                           ),
                           CircleAvatar(
@@ -96,6 +96,70 @@ class MyFirstUI extends StatelessWidget {
                   ),
                 )
               ],
+            ),
+            const Text(
+              'Jeanna Doe',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, fontSize: 30),
+            ),
+            SizedBox(
+                width: width / 1.15,
+                child: const Padding(
+                  padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
+                  child: Text(
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 16, color: Colors.grey),
+                  ),
+                )),
+            SizedBox(
+              width: width / 1.3,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 1.5, color: Colors.blue),
+                        borderRadius: BorderRadius.circular(10.0)),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15.0),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 40, vertical: 15),
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                        ),
+                        child: const Text(
+                          'Modifier le profil',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Colors.blue, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                  ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(15.0),
+                    // Ajoutez le rayon ici
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 40, vertical: 7),
+                      decoration: const BoxDecoration(
+                        color: Colors.blue,
+                      ),
+                      child: const Text(
+                        '+',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 28,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             )
           ],
         ));
