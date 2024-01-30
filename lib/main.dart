@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'widgets/friend_card_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -221,8 +222,40 @@ class MyFirstUI extends StatelessWidget {
                   ),
                 ]),
               ),
+              const SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    FriendCardWidget(
+                        imagePath: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                        name: "Alex"
+                    ),
+                    FriendCardWidget(
+                        imagePath: "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                        name: "Loki"
+                    ),
+                    FriendCardWidget(
+                        imagePath: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                        name: "Matt"
+                    ),
+                    FriendCardWidget(
+                        imagePath: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                        name: "Alexandre"
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+                child: Divider(
+                  color: Colors.grey[300],
+                  thickness: 1,
+                  height: 1,
+                ),
+              ),
             ],
           ),
+
         ));
   }
 }
