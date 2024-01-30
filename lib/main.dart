@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_test_project/widgets/post_section_widget.dart';
 import 'widgets/friend_card_widget.dart';
 
 void main() {
@@ -253,6 +254,16 @@ class MyFirstUI extends StatelessWidget {
                   height: 1,
                 ),
               ),
+              SizedBox(
+                width: containerWidth,
+                child: const Row(children: [
+                  Text(
+                    'Feed',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
+                ]),
+              ),
+              PostSectionWidget(size: size)
             ],
           ),
 
